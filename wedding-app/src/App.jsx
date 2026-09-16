@@ -69,7 +69,7 @@ function App() {
 
     // Attempt to play background music when user interacts
     if (iframeRef.current) {
-      iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      iframeRef.current.play().catch(e => console.log("Audio play prevented:", e));
       setIsPlaying(true);
     }
 
@@ -81,8 +81,11 @@ function App() {
 
   const toggleMusic = () => {
     if (iframeRef.current) {
-      const func = isPlaying ? "pauseVideo" : "playVideo";
-      iframeRef.current.contentWindow.postMessage(`{"event":"command","func":"${func}","args":""}`, '*');
+      if (isPlaying) {
+        iframeRef.current.pause();
+      } else {
+        iframeRef.current.play().catch(e => console.log("Audio play prevented:", e));
+      }
       setIsPlaying(!isPlaying);
     }
   };
@@ -371,14 +374,14 @@ function App() {
 
       </main>
 
-      {/* Background YouTube Audio */}
-      <iframe
+      {/* Background Audio */}
+      <audio
         ref={iframeRef}
-        id="yt-player"
-        src="https://www.youtube.com/embed/kxtjMtSHM3U?enablejsapi=1&autoplay=0&loop=1&playlist=kxtjMtSHM3U"
-        style={{ display: 'none' }}
-        allow="autoplay"
-      ></iframe>
+        id="bgm-player"
+        src="/bgm.mp3"
+        preload="auto"
+        loop
+      ></audio>
 
       {/* Floating Music Button */}
       <button id="bgmBtn" className={isPlaying ? 'playing' : ''} onClick={toggleMusic}>
