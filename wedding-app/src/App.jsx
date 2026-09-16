@@ -90,6 +90,30 @@ function App() {
     }
   };
 
+  const handleAddToCalendar = (e) => {
+    e.preventDefault();
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Raeza & Ashwin Wedding//EN
+BEGIN:VEVENT
+DTSTART:20261020T113000Z
+DTEND:20261020T143000Z
+SUMMARY:Wedding Reception - Raeza & Ashwin
+LOCATION:Emerald Palace Auditorium, Kurukkol Kunnu
+DESCRIPTION:Join us for the wedding reception of Raeza and Ashwin!
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'Raeza-Ashwin-Reception.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
@@ -194,7 +218,7 @@ function App() {
               <div className="fam-card">
                 <div className="fam-role">BRIDE</div>
                 <h3 className="fam-name">Fathima Raeza PC</h3>
-                <div className="fam-rel">daughter of</div>
+                <div className="fam-rel">Daughter of</div>
                 <p className="fam-parents">Dr. Mohamed Shabeer PC &amp; Mrs. Sufaija Mandayappuram</p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents">
@@ -207,7 +231,7 @@ function App() {
               <div className="fam-card">
                 <div className="fam-role">GROOM</div>
                 <h3 className="fam-name">Mohamed Ashwin PT</h3>
-                <div className="fam-rel">son of</div>
+                <div className="fam-rel">Son of</div>
                 <p className="fam-parents">Mr. Abdul Rahiman PT &amp; Mrs. Sheeba</p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents">
@@ -276,9 +300,8 @@ function App() {
                   View on Map
                 </a>
                 <a 
-                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Raeza+%26+Ashwin&dates=20261020T170000/20261020T200000&details=Join+us+for+the+wedding+reception+of+Raeza+and+Ashwin!&location=Emerald+Palace+Auditorium,+Kurukkol+Kunnu"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={handleAddToCalendar}
                   className="btn secondary"
                   style={{ textDecoration: 'none' }}
                 >
@@ -342,22 +365,12 @@ function App() {
                 WITH BEST REGARDS
               </p>
               
-              {/* Dressup Logo */}
-              <img 
-                src="/dressup.png" 
-                alt="DressUp" 
-                style={{ height: '45px', objectFit: 'contain', margin: '0 auto', filter: 'invert(1) brightness(0.8)' }} 
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
-              />
-              <div style={{ display: 'none', fontFamily: 'var(--serif)', fontSize: '2.4rem', fontStyle: 'italic', color: 'var(--gold)' }}>
-                DressUp
+              <div style={{ fontFamily: 'var(--serif)', fontSize: '2.4rem', fontStyle: 'italic', color: 'var(--gold)' }}>
+                Kalpakavadi Family
               </div>
             </div>
 
-            <div className="footer-social" style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', marginBottom: '3rem' }}>
+            <div className="footer-social" style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', marginBottom: '2rem' }}>
               <a href="#" className="social-icon" style={{ width: '45px', height: '45px', border: '1px solid var(--gold-dim)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', textDecoration: 'none' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C6.48 2 2 6.48 2 12C2 13.78 2.47 15.45 3.3 16.9L2.12 21.05L6.4 19.92C7.8 20.67 9.4 21.1 11.1 21.1C16.62 21.1 21.1 16.62 21.1 11.1C21.1 5.58 16.62 1.1 11.1 1.1"/></svg>
               </a>
@@ -367,6 +380,12 @@ function App() {
               <a href="#" className="social-icon" style={{ width: '45px', height: '45px', border: '1px solid var(--gold-dim)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', textDecoration: 'none' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
               </a>
+            </div>
+
+            <div className="footer-brands" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', opacity: 0.6, marginTop: '2rem' }}>
+               <div style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontStyle: 'italic', color: 'var(--gold)' }}>DressUp</div>
+               <div style={{ width: '1px', height: '20px', background: 'var(--gold)', opacity: 0.3 }}></div>
+               <div style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', letterSpacing: '0.2em', color: 'var(--text-light)', textTransform: 'uppercase' }}>CreativHeads</div>
             </div>
 
           </div>
