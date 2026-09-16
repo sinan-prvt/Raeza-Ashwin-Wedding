@@ -151,11 +151,11 @@ function App() {
           </p>
 
           <div className={`couple-section fade-in-up delay-5 ${isOpen ? 'is-visible' : ''}`}>
-            <h1 className="name uppercase">FATHIMA RAEZA P.C.</h1>
+            <h1 className="name uppercase">FATHIMA RAEZA PC</h1>
 
             <div className="with-text" style={{ margin: '1.5rem 0' }}>With</div>
 
-            <h1 className="name uppercase">MOHAMED ASHWIN P.T.</h1>
+            <h1 className="name uppercase">MOHAMED ASHWIN PT</h1>
           </div>
 
           <div className={`hero-date fade-in-up delay-6 ${isOpen ? 'is-visible' : ''}`}>
@@ -190,12 +190,12 @@ function App() {
               {/* Bride Family */}
               <div className="fam-card">
                 <div className="fam-role">BRIDE</div>
-                <h3 className="fam-name">Fathima Raeza P.C.</h3>
+                <h3 className="fam-name">Fathima Raeza PC</h3>
                 <div className="fam-rel">daughter of</div>
-                <p className="fam-parents">Dr. Mohamed Shabeer P.C. &amp; Mrs. Sufaija Mandayappuram</p>
+                <p className="fam-parents">Dr. Mohamed Shabeer PC &amp; Mrs. Sufaija Mandayappuram</p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents">
-                  Granddaughter of (Late) Mr. P.C. Abdurahman &amp; (Late) Mrs. Fathima Mulanthala (Valavannur)<br />
+                  Granddaughter of (Late) Mr. PC Abdurahman &amp; (Late) Mrs. Fathima Mulanthala (Valavannur)<br />
                   &amp; Mr. Ali Mandayappuram &amp; Mrs. Rasiya Karuvally Pathikkal (Kottakkal)
                 </p>
               </div>
@@ -203,12 +203,12 @@ function App() {
               {/* Groom Family */}
               <div className="fam-card">
                 <div className="fam-role">GROOM</div>
-                <h3 className="fam-name">Mohamed Ashwin P.T.</h3>
+                <h3 className="fam-name">Mohamed Ashwin PT</h3>
                 <div className="fam-rel">son of</div>
-                <p className="fam-parents">Mr. Abdul Rahiman P.T. &amp; Mrs. Sheeba</p>
+                <p className="fam-parents">Mr. Abdul Rahiman PT &amp; Mrs. Sheeba</p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents">
-                  Grandson of (Late) Mr. P.T. Hydrose Haji &amp; (Late) Prof. A.K. Hydrose
+                  Grandson of (Late) Mr. PT Hydrose Haji &amp; (Late) Prof. AK Hydrose
                 </p>
               </div>
             </div>
