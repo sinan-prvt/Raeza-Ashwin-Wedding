@@ -91,20 +91,7 @@ function App() {
   };
 
   const handleAddToCalendar = (e) => {
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Raeza & Ashwin Wedding//EN
-BEGIN:VEVENT
-DTSTART:20261020T113000Z
-DTEND:20261020T143000Z
-SUMMARY:Wedding Reception - Raeza & Ashwin
-LOCATION:Emerald Palace Auditorium, Kurukkol Kunnu
-DESCRIPTION:Join us for the wedding reception of Raeza and Ashwin!
-END:VEVENT
-END:VCALENDAR`;
-
-    const dataUri = "data:text/calendar;charset=utf8," + encodeURIComponent(icsContent);
-    e.currentTarget.href = dataUri;
+    // We are now using a direct Google Calendar link to avoid file downloads on Android
   };
 
   const addToRefs = (el) => {
@@ -293,9 +280,9 @@ END:VCALENDAR`;
                   View on Map
                 </a>
                 <a 
-                  href="#"
-                  download="Raeza-Ashwin-Reception.ics"
-                  onClick={handleAddToCalendar}
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Raeza+%26+Ashwin&dates=20261020T113000Z/20261020T143000Z&details=Join+us+for+the+wedding+reception+of+Raeza+and+Ashwin!&location=Emerald+Palace+Auditorium,+Kurukkol+Kunnu"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn secondary"
                   style={{ textDecoration: 'none' }}
                 >
@@ -307,7 +294,7 @@ END:VCALENDAR`;
         </section>
 
         {/* Location Map Section */}
-        <section className="section location-section">
+        <section className="section location-section" style={{ minHeight: 'auto', padding: '3rem 1.5rem 1rem' }}>
           <div className="container reveal" ref={addToRefs}>
 
             <div className="compliments-header">
@@ -364,10 +351,10 @@ END:VCALENDAR`;
               </div>
             </div>
 
-            <div className="footer-brands" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', opacity: 0.8, marginTop: '1rem' }}>
-               <img src="/dressup.png" alt="DressUp" style={{ height: '40px', objectFit: 'contain' }} />
+            <div className="footer-brands" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center', alignItems: 'center', opacity: 0.9, marginTop: '2rem', paddingBottom: '3rem' }}>
+               <img src="/dressup.png" alt="DressUp" style={{ height: '35px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                <div style={{ width: '1px', height: '30px', background: 'var(--gold)', opacity: 0.3 }}></div>
-               <img src="/creativheads.png" alt="CreativHeads" style={{ height: '40px', objectFit: 'contain' }} />
+               <img src="/creativheads.png" alt="CreativHeads" style={{ height: '35px', objectFit: 'contain' }} />
             </div>
 
           </div>
