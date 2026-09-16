@@ -370,13 +370,12 @@ END:VCALENDAR`;
               </div>
             </div>
 
-            <div className="footer-brands" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', justifyContent: 'center', alignItems: 'center', opacity: 0.9, marginTop: '2rem', paddingBottom: '3rem' }}>
-               <img src="/dental.png" alt="Kadampuzha Dental Clinic" style={{ height: '28px', objectFit: 'contain' }} />
-               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                 <img src="/dressup.png" alt="DressUp" style={{ height: '22px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
-                 <div style={{ width: '1px', height: '18px', background: 'var(--gold)', opacity: 0.3 }}></div>
-                 <img src="/creativheads.png" alt="CreativHeads" style={{ height: '22px', objectFit: 'contain' }} />
-               </div>
+            <div className="footer-brands" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', alignItems: 'center', opacity: 0.9, marginTop: '2rem', paddingBottom: '3rem', flexWrap: 'nowrap', overflow: 'hidden' }}>
+               <img src="/dental.png" alt="Kadampuzha Dental Clinic" style={{ height: '18px', maxWidth: '30%', objectFit: 'contain' }} />
+               <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
+               <img src="/dressup.png" alt="DressUp" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+               <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
+               <img src="/creativheads.png" alt="CreativHeads" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain' }} />
             </div>
 
           </div>
