@@ -91,7 +91,6 @@ function App() {
   };
 
   const handleAddToCalendar = (e) => {
-    e.preventDefault();
     const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Raeza & Ashwin Wedding//EN
@@ -104,14 +103,8 @@ DESCRIPTION:Join us for the wedding reception of Raeza and Ashwin!
 END:VEVENT
 END:VCALENDAR`;
 
-    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'Raeza-Ashwin-Reception.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const dataUri = "data:text/calendar;charset=utf8," + encodeURIComponent(icsContent);
+    e.currentTarget.href = dataUri;
   };
 
   const addToRefs = (el) => {
@@ -301,6 +294,7 @@ END:VCALENDAR`;
                 </a>
                 <a 
                   href="#"
+                  download="Raeza-Ashwin-Reception.ics"
                   onClick={handleAddToCalendar}
                   className="btn secondary"
                   style={{ textDecoration: 'none' }}
@@ -312,13 +306,13 @@ END:VCALENDAR`;
           </div>
         </section>
 
-        {/* Compliments & QR Section */}
-        <section className="section compliments-section">
+        {/* Location Map Section */}
+        <section className="section location-section">
           <div className="container reveal" ref={addToRefs}>
 
             <div className="compliments-header">
-              <p className="compliments-from">From Relatives &amp; Friends</p>
-              <h2 className="compliments-title">With Best Compliments</h2>
+              <p className="compliments-from">Find Your Way</p>
+              <h2 className="compliments-title">Location Map</h2>
             </div>
 
             <a
