@@ -127,7 +127,7 @@ function App() {
             <div className="env-date">20 OCTOBER 2026</div>
           </div>
           <div className="env-flap"></div>
-          <div className="env-seal">نکاح</div>
+          <div className="env-seal">وليمة</div>
           <div className="env-cta">TAP TO OPEN</div>
         </div>
       </div>
@@ -150,7 +150,7 @@ function App() {
 
           <p className={`eyebrow fade-in-up delay-3 ${isOpen ? 'is-visible' : ''}`} style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
             WE CORDIALLY REQUEST THE HONOR OF YOUR PRESENCE<br />
-            AT THE NIKAH OF OUR BELOVED CHILDREN
+            AT THE MARRIAGE RECEPTION OF OUR BELOVED CHILDREN
           </p>
 
           <div className={`couple-section fade-in-up delay-5 ${isOpen ? 'is-visible' : ''}`}>
