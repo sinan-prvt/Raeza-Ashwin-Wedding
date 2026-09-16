@@ -150,7 +150,7 @@ function App() {
 
           <p className={`eyebrow fade-in-up delay-3 ${isOpen ? 'is-visible' : ''}`} style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
             WE CORDIALLY REQUEST THE HONOR OF YOUR PRESENCE<br />
-            AT THE MARRIAGE RECEPTION OF OUR BELOVED CHILDREN
+            AT THE RECEPTION OF OUR BELOVED CHILDREN
           </p>
 
           <div className={`couple-section fade-in-up delay-5 ${isOpen ? 'is-visible' : ''}`}>
