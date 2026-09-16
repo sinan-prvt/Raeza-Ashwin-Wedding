@@ -371,6 +371,8 @@ END:VCALENDAR`;
             </div>
 
             <div className="footer-brands" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center', alignItems: 'center', opacity: 0.9, marginTop: '2rem', paddingBottom: '3rem' }}>
+               <img src="/dental.png" alt="Dental Logo" style={{ height: '22px', objectFit: 'contain' }} />
+               <div style={{ width: '1px', height: '18px', background: 'var(--gold)', opacity: 0.3 }}></div>
                <img src="/dressup.png" alt="DressUp" style={{ height: '22px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                <div style={{ width: '1px', height: '18px', background: 'var(--gold)', opacity: 0.3 }}></div>
                <img src="/creativheads.png" alt="CreativHeads" style={{ height: '22px', objectFit: 'contain' }} />
