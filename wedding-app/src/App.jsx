@@ -370,22 +370,10 @@ END:VCALENDAR`;
               </div>
             </div>
 
-            <div className="footer-social" style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', marginBottom: '2rem' }}>
-              <a href="#" className="social-icon" style={{ width: '45px', height: '45px', border: '1px solid var(--gold-dim)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', textDecoration: 'none' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C6.48 2 2 6.48 2 12C2 13.78 2.47 15.45 3.3 16.9L2.12 21.05L6.4 19.92C7.8 20.67 9.4 21.1 11.1 21.1C16.62 21.1 21.1 16.62 21.1 11.1C21.1 5.58 16.62 1.1 11.1 1.1"/></svg>
-              </a>
-              <a href="#" className="social-icon" style={{ width: '45px', height: '45px', border: '1px solid var(--gold-dim)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', textDecoration: 'none' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" className="social-icon" style={{ width: '45px', height: '45px', border: '1px solid var(--gold-dim)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', textDecoration: 'none' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              </a>
-            </div>
-
-            <div className="footer-brands" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', opacity: 0.6, marginTop: '2rem' }}>
-               <div style={{ fontFamily: 'var(--serif)', fontSize: '1.4rem', fontStyle: 'italic', color: 'var(--gold)' }}>DressUp</div>
-               <div style={{ width: '1px', height: '20px', background: 'var(--gold)', opacity: 0.3 }}></div>
-               <div style={{ fontFamily: 'var(--sans)', fontSize: '0.8rem', letterSpacing: '0.2em', color: 'var(--text-light)', textTransform: 'uppercase' }}>CreativHeads</div>
+            <div className="footer-brands" style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', opacity: 0.8, marginTop: '1rem' }}>
+               <img src="/dressup.png" alt="DressUp" style={{ height: '40px', objectFit: 'contain' }} />
+               <div style={{ width: '1px', height: '30px', background: 'var(--gold)', opacity: 0.3 }}></div>
+               <img src="/creativheads.png" alt="CreativHeads" style={{ height: '40px', objectFit: 'contain' }} />
             </div>
 
           </div>
