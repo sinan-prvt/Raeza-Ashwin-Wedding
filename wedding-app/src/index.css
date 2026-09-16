@@ -468,7 +468,7 @@ body {
 
 .reception-title {
     font-family: var(--script);
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
     color: var(--gold);
     font-weight: 400;
     margin-bottom: 1rem;
@@ -1051,7 +1051,7 @@ body {
     font-family: var(--serif);
     font-style: italic;
     font-weight: 300;
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 7.5vw, 2.5rem);
     color: var(--text-light);
     line-height: 1;
     margin-bottom: 0.8rem;
@@ -1068,7 +1068,7 @@ body {
 
 .fam-parents {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 4.5vw, 1.1rem);
     color: var(--gold);
     line-height: 1.5;
     font-weight: 400;
@@ -1084,7 +1084,7 @@ body {
 
 .fam-grandparents {
     font-family: var(--sans);
-    font-size: 0.6rem;
+    font-size: clamp(0.48rem, 2.8vw, 0.6rem);
     letter-spacing: 0.1em;
     color: var(--text-light);
     opacity: 0.5;
@@ -1322,8 +1322,8 @@ body {
         inset: 0.8rem;
     }
 
-    .reception-title {
-        font-size: 2.8rem;
+    .fam-card {
+        padding: 2.5rem 1rem;
     }
 
     .section-title {
