@@ -91,7 +91,27 @@ function App() {
   };
 
   const handleAddToCalendar = (e) => {
-    // We are now using a direct Google Calendar link to avoid file downloads on Android
+    e.preventDefault();
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Raeza & Ashwin Wedding//EN
+BEGIN:VEVENT
+DTSTART:20261020T113000Z
+DTEND:20261020T143000Z
+SUMMARY:Wedding Reception - Raeza & Ashwin
+LOCATION:Emerald Palace Auditorium, Kurukkol Kunnu
+DESCRIPTION:Join us for the wedding reception of Raeza and Ashwin!
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'Raeza-Ashwin-Reception.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const addToRefs = (el) => {
@@ -280,9 +300,8 @@ function App() {
                   View on Map
                 </a>
                 <a 
-                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Raeza+%26+Ashwin&dates=20261020T113000Z/20261020T143000Z&details=Join+us+for+the+wedding+reception+of+Raeza+and+Ashwin!&location=Emerald+Palace+Auditorium,+Kurukkol+Kunnu"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={handleAddToCalendar}
                   className="btn secondary"
                   style={{ textDecoration: 'none' }}
                 >
