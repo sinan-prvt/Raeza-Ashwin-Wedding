@@ -173,8 +173,7 @@ END:VCALENDAR`;
           <div className={`hero-gline fade-in delay-3 ${isOpen ? 'is-visible' : ''}`}></div>
 
           <p className={`eyebrow fade-in-up delay-3 ${isOpen ? 'is-visible' : ''}`} style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
-            WE CORDIALLY REQUEST THE HONOR OF YOUR PRESENCE<br />
-            AT THE RECEPTION OF OUR BELOVED CHILDREN
+            Wedding reception of our beloved daughter
           </p>
 
           <div className={`couple-section fade-in-up delay-5 ${isOpen ? 'is-visible' : ''}`}>
@@ -299,7 +298,7 @@ END:VCALENDAR`;
                 >
                   View on Map
                 </a>
-                <a 
+                <a
                   href="#"
                   onClick={handleAddToCalendar}
                   className="btn secondary"
@@ -348,11 +347,11 @@ END:VCALENDAR`;
         {/* Footer */}
         <footer className="footer" style={{ padding: '6rem 1.5rem 4rem', textAlign: 'center', background: 'transparent' }}>
           <div className="container reveal" ref={addToRefs}>
-            
+
             <h2 className="footer-couple" style={{ marginBottom: '1rem', fontSize: '2.5rem', fontWeight: 300, fontFamily: 'var(--serif)', fontStyle: 'italic' }}>
               Raeza &amp; Ashwin
             </h2>
-            
+
             <p className="footer-details" style={{ marginBottom: '0.5rem', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)', opacity: 0.6 }}>
               20 &middot; OCTOBER &middot; 2026
             </p>
@@ -364,18 +363,18 @@ END:VCALENDAR`;
               <p style={{ fontFamily: 'var(--sans)', fontSize: '0.55rem', letterSpacing: '0.3em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                 WITH BEST REGARDS
               </p>
-              
+
               <div style={{ fontFamily: 'var(--serif)', fontSize: '2.4rem', fontStyle: 'italic', color: 'var(--gold)' }}>
-                Kalpakavadi Family
+                Kalpakavadi and Pottachola Family
               </div>
             </div>
 
             <div className="footer-brands" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', alignItems: 'center', opacity: 0.9, marginTop: '2rem', paddingBottom: '3rem', flexWrap: 'nowrap', overflow: 'hidden' }}>
-               <img src="/dental.png" alt="Kadampuzha Dental Clinic" style={{ height: '18px', maxWidth: '30%', objectFit: 'contain' }} />
-               <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
-               <img src="/dressup.png" alt="DressUp" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
-               <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
-               <img src="/creativheads.png" alt="CreativHeads" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain' }} />
+              <img src="/dental.png" alt="Kadampuzha Dental Clinic" style={{ height: '18px', maxWidth: '30%', objectFit: 'contain' }} />
+              <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
+              <img src="/dressup.png" alt="DressUp" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+              <div style={{ width: '1px', height: '15px', background: 'var(--gold)', opacity: 0.3 }}></div>
+              <img src="/creativheads.png" alt="CreativHeads" style={{ height: '15px', maxWidth: '30%', objectFit: 'contain' }} />
             </div>
 
           </div>
