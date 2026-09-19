@@ -253,13 +253,15 @@ END:VCALENDAR`;
                 <div className="fam-role">BRIDE</div>
                 <h3 className="fam-name">Fathima Raeza PC</h3>
                 <div className="fam-rel">Daughter of</div>
-                <p className="fam-parents">Dr. Mohamed Shabeer PC &amp; Mrs. Sufaija Mandayappuram</p>
+                <p className="fam-parents" style={{ lineHeight: '1.5' }}>
+                  Dr. Mohamed Shabeer PC &amp; Mrs. Sufaija Mandayappuram<br />
+                  <span style={{ fontSize: '0.75rem', textTransform: 'none', letterSpacing: '0.05em', opacity: 0.9 }}>"Kalpakavadi" - Pottachola House, Valavannur</span>
+                </p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents" style={{ textTransform: 'none', lineHeight: '1.4', fontSize: '0.7rem' }}>
                   Grand D/o. Mr. PC Abdurahman (Late) &amp; Fathima M (Late)<br />
                   (Valavannur) &amp; Ali Mandayappuram &amp;<br />
-                  Rasiya Karuvally Pathikkal (Kottakkal)<br />
-                  Pottachola House, Valavannur
+                  Rasiya Karuvally Pathikkal (Kottakkal)
                 </p>
               </div>
 
@@ -268,12 +270,14 @@ END:VCALENDAR`;
                 <div className="fam-role">GROOM</div>
                 <h3 className="fam-name">Mohamed Ashwin PT</h3>
                 <div className="fam-rel">Son of</div>
-                <p className="fam-parents">Mr. Abdul Rahiman PT &amp; Mrs. Sheeba</p>
+                <p className="fam-parents" style={{ lineHeight: '1.5' }}>
+                  Mr. Abdul Rahiman PT &amp; Mrs. Sheeba<br />
+                  <span style={{ fontSize: '0.75rem', textTransform: 'none', letterSpacing: '0.05em', opacity: 0.9 }}>Thodukappu, Karinkallathani</span>
+                </p>
                 <div className="fam-divider"></div>
                 <p className="fam-grandparents" style={{ textTransform: 'none', lineHeight: '1.4', fontSize: '0.7rem' }}>
                   Grand S/o. Mr. Hydrose Haji PT (Late) &amp;<br />
-                  Prof. AK. Hydrose (Late)<br />
-                  Thodukappu, Karinkallathani
+                  Prof. AK. Hydrose (Late)
                 </p>
               </div>
             </div>
