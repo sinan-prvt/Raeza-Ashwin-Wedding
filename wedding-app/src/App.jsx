@@ -8,8 +8,33 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const revealRefs = useRef([]);
   const iframeRef = useRef(null);
+
+  // Countdown Timer
+  useEffect(() => {
+    const targetDate = new Date('October 20, 2026 17:00:00').getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Mouse tracking
   useEffect(() => {
@@ -163,18 +188,28 @@ END:VCALENDAR`;
         <section id="home" className="section hero">
           <div className="hero-frame"></div>
 
-          <div className={`bismillah fade-in-up delay-1 ${isOpen ? 'is-visible' : ''}`}>
-            <div className="arabic-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-            <p className="bismillah-translation">
-              In the name of Allah, the Most Gracious, the Most Merciful
+          <div className={`bismillah fade-in-up delay-1 ${isOpen ? 'is-visible' : ''}`} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <div className="arabic-bismillah" style={{ fontFamily: 'var(--arabic)', fontSize: '1.3rem', color: '#fff', marginBottom: '0.8rem' }}>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <p className="bismillah-translation" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.1rem', color: 'var(--gold)', marginBottom: '0.3rem', letterSpacing: '0.02em' }}>
+              In the name of Almighty
+            </p>
+            <p className="bismillah-translation" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--gold)', letterSpacing: '0.05em' }}>
+              The Most Beneficent & The Most Merciful
             </p>
           </div>
 
-          <div className={`hero-gline fade-in delay-3 ${isOpen ? 'is-visible' : ''}`}></div>
+          <div className={`hero-parents fade-in-up delay-2 ${isOpen ? 'is-visible' : ''}`} style={{ textAlign: 'center', marginTop: '1.5rem', marginBottom: '2rem' }}>
+            <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', color: 'var(--text-main)', fontWeight: 400, marginBottom: '0.3rem', letterSpacing: '0.05em' }}>
+              Dr. Mohamed Shabeer PC & Sufaija MP
+            </h3>
+            <p style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', color: 'var(--text-light)', letterSpacing: '0.05em', opacity: 0.8 }}>
+              "Kalpakavadi" - Pottachola House, Valavannur
+            </p>
+          </div>
 
-          <p className={`eyebrow fade-in-up delay-3 ${isOpen ? 'is-visible' : ''}`} style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
-            Wedding reception of our beloved daughter
-          </p>
+          <div className={`eyebrow with-lines fade-in-up delay-3 ${isOpen ? 'is-visible' : ''}`} style={{ textTransform: 'none', letterSpacing: '0.02em', fontSize: '0.75rem', marginBottom: '2.5rem', padding: '0 1rem', fontFamily: 'var(--sans)', color: 'var(--gold)' }}>
+            We kindly request your presence at the marriage reception of our beloved daughter.
+          </div>
 
           <div className={`couple-section fade-in-up delay-5 ${isOpen ? 'is-visible' : ''}`}>
             <h1 className="name uppercase">FATHIMA RAEZA PC</h1>
@@ -220,9 +255,11 @@ END:VCALENDAR`;
                 <div className="fam-rel">Daughter of</div>
                 <p className="fam-parents">Dr. Mohamed Shabeer PC &amp; Mrs. Sufaija Mandayappuram</p>
                 <div className="fam-divider"></div>
-                <p className="fam-grandparents">
-                  Granddaughter of (Late) Mr. PC Abdurahman &amp; (Late) Mrs. Fathima Mulanthala (Valavannur)<br />
-                  &amp; Mr. Ali Mandayappuram &amp; Mrs. Rasiya Karuvally Pathikkal (Kottakkal)
+                <p className="fam-grandparents" style={{ textTransform: 'none', lineHeight: '1.4', fontSize: '0.7rem' }}>
+                  Grand D/o. Mr. PC Abdurahman (Late) &amp; Fathima M (Late)<br />
+                  (Valavannur) &amp; Ali Mandayappuram &amp;<br />
+                  Rasiya Karuvally Pathikkal (Kottakkal)<br />
+                  Pottachola House, Valavannur
                 </p>
               </div>
 
@@ -233,8 +270,10 @@ END:VCALENDAR`;
                 <div className="fam-rel">Son of</div>
                 <p className="fam-parents">Mr. Abdul Rahiman PT &amp; Mrs. Sheeba</p>
                 <div className="fam-divider"></div>
-                <p className="fam-grandparents">
-                  Grandson of (Late) Mr. PT Hydrose Haji &amp; (Late) Prof. AK Hydrose
+                <p className="fam-grandparents" style={{ textTransform: 'none', lineHeight: '1.4', fontSize: '0.7rem' }}>
+                  Grand S/o. Mr. Hydrose Haji PT (Late) &amp;<br />
+                  Prof. AK. Hydrose (Late)<br />
+                  Thodukappu, Karinkallathani
                 </p>
               </div>
             </div>
@@ -308,6 +347,36 @@ END:VCALENDAR`;
                 </a>
               </div>
             </div>
+            {/* Countdown Section Inline */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '6rem' }}>
+              <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <p className="eyebrow with-lines" style={{ marginBottom: '0.5rem' }}>
+                  THE COUNTDOWN
+                </p>
+                <h3 style={{ fontFamily: 'var(--serif)', fontSize: '2rem', fontStyle: 'italic', color: 'var(--text-main)', fontWeight: 300 }}>
+                  To the big day
+                </h3>
+              </div>
+              <div className="countdown-container">
+                <div className="countdown-item">
+                  <span className="countdown-value">{timeLeft.days.toString().padStart(2, '0')}</span>
+                  <span className="countdown-label">Days</span>
+                </div>
+                <div className="countdown-item">
+                  <span className="countdown-value">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                  <span className="countdown-label">Hours</span>
+                </div>
+                <div className="countdown-item">
+                  <span className="countdown-value">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                  <span className="countdown-label">Mins</span>
+                </div>
+                <div className="countdown-item">
+                  <span className="countdown-value">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                  <span className="countdown-label">Secs</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
